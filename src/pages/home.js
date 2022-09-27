@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import home2 from "../assets/imgs/home2.gif"
+import home from "../assets/imgs/home.png"
 import styled from "styled-components";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
     
     return (
         <HomeContent>
-            <HomeGif src={home2} alt="twillie logo" />
+            <HomeGif src={home} alt="twillie logo" />
         </HomeContent>
     )
 }
