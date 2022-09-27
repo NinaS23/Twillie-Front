@@ -1,0 +1,16 @@
+div.root {
+    width: 100%;
+    height: 100%;
+  }
+
+  *{
+    box-sizing: border-box;
+      --cor-fundo: #FFFFFF;
+      --cor-preta: #333333;
+      --cor-amarela_base: #FEED4F;
+  }
+
+  body {
+    background-color: var(--cor-amarela_base);
+    color: var(--cor-preta);
+  }
