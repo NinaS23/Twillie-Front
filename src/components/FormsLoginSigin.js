@@ -7,7 +7,18 @@ export default function FormsLoginSigin({
     if (type === "register")
         return (
             <>
-                <h1>registro</h1>
+                <Input placeholder="email" type="email" ></Input>
+                <Input placeholder="password" type="password" ></Input>
+                <Input placeholder="name" type="password" ></Input>
+                <Input placeholder="picture url" type="password" ></Input>
+                <ButtonRegister>
+                    <h3>
+                        Log in
+                    </h3>
+                </ButtonRegister>
+                <SubTitle>
+                    <StyledLink to={"/login"}><h4>let`s go back to login</h4></StyledLink>
+                </SubTitle>
             </>
         )
     if (type === "login") {
@@ -21,7 +32,7 @@ export default function FormsLoginSigin({
                     </h3>
                 </ButtonRegister>
                 <SubTitle>
-                    <StyledLink to={"sing-up"}><h4>still don't have an account? click here and sign up</h4></StyledLink>
+                    <StyledLink to={"/sing-up"}><h4>still don't have an account? click here and sign up</h4></StyledLink>
                 </SubTitle>
                
             </>
@@ -43,7 +54,7 @@ padding-top: 20%;
 const Input = styled.input`
    height: 30px;
    width: 100%;
-    margin-top: 8%;
+    margin-top: 5%;
     background-color: aliceblue;
     border-style: outset;
   border-color: #5897D6;
@@ -72,7 +83,7 @@ const ButtonRegister = styled.button`
  height: 30px;
  width: 80%;
  margin-left: 10%;
- margin-top: 10%;
+ margin-top: 5%;
  background-color: #5897D6;
   border-style: none;
   &:hover {
@@ -90,7 +101,7 @@ const ButtonRegister = styled.button`
 const SubTitle = styled.div`
 width:100% ;
 height: 10px;
-margin-top: 100px;
+margin-top: 47px;
 h4{
     font-family: 'passione one', serif;
     font-weight: 400;
