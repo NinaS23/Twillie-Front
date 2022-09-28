@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import homeGif from "../assets/imgs/home.gif"
+import home from "../assets/imgs/home.png"
 import styled from "styled-components";
 
 export default function Home() {
@@ -7,11 +7,11 @@ export default function Home() {
 
     setTimeout(() => {
       navigate("/login");
-    }, 6000);
+    }, 3000);
     
     return (
         <HomeContent>
-            <HomeGif src={homeGif} alt="twillie logo" />
+            <HomeGif src={home} alt="twillie logo" />
         </HomeContent>
     )
 }
