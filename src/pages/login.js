@@ -10,8 +10,8 @@ export default function Login(){
         <Left>
             <h1>Welcome To Twillie</h1>
             <p>the best place to organize your life</p>
-        </Left>
-        <Rigth>
+        </Left>    
+            <Rigth>
                     <img src={logo} alt="twillie logo" />
                     <Inputs>
 
@@ -75,11 +75,21 @@ background-color: #FFFFFF;
 width: 40%;
 display: flex;
 flex-direction: column;
+justify-content: center;
 padding-top: 5%;
 align-items: center;
 img{
     width: 90px;
 }
+@media (max-width: 796px) {
+    width: 100%;
+    height: 64%;
+  }
+  @media (max-width: 375px) {
+      padding-top: 19%;
+    width: 100%;
+    height: 64%;
+  }
 `
 
 const Conteiner = styled.div`
@@ -88,8 +98,10 @@ width: 100%;
 height: 100vh;
 @media (max-width:768px) {
     flex-direction:column;
+
 }
 
 `
 const Inputs = styled.div`
 `
+
