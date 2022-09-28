@@ -23,6 +23,7 @@ export default function FormsLoginSigin({
                 <SubTitle>
                     <StyledLink to={"sing-up"}><h4>still don't have an account? click here and sign up</h4></StyledLink>
                 </SubTitle>
+               
             </>
         )
     }
@@ -87,20 +88,17 @@ const ButtonRegister = styled.button`
 
 `
 const SubTitle = styled.div`
-margin-left: 10%;
 width:100% ;
 height: 10px;
-margin-top: 40%;
+margin-top: 100px;
 h4{
     font-family: 'passione one', serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 10px;
-    margin-right: 12%;
 }  
 `
 const StyledLink = styled(Link)`
-text-align: center;
 text-align: center;
 color: #333333;
 text-decoration: overline;

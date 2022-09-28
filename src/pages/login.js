@@ -50,6 +50,7 @@ p{
 }
 @media (max-width:768px) {
     width: 100%;
+    height: 20%;
     h1{
         margin-top: 5% ;
     }
@@ -63,7 +64,7 @@ p{
 }
 @media (max-width:425px) {
     width: 100%;
-    height: 100vh;
+    height: 20%;
     justify-content: center;
     padding-left: 0%;
     align-items: center;
@@ -84,9 +85,9 @@ width: 40%;
 display: flex;
 flex-direction: column;
 justify-content: center;
-padding-top: 5%;
 align-items: center;
 img{
+    margin-top: 5%;
     width: 90px;
 }
 @media (max-width: 796px) {
@@ -104,6 +105,7 @@ img{
 
 const Conteiner = styled.div`
 display: flex;
+position: relative;
 width: 100vw;
 height: 100vh;
 @media (max-width:768px) {
