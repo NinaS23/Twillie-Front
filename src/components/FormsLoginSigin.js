@@ -13,7 +13,7 @@ export default function FormsLoginSigin({
                 <Input placeholder="picture url" type="password" ></Input>
                 <ButtonRegister>
                     <h3>
-                        Log in
+                        sing up
                     </h3>
                 </ButtonRegister>
                 <SubTitle>
