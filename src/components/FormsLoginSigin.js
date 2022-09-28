@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../sizes/sizesScreen";
 
 export default function FormsLoginSigin({
     type

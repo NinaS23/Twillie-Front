@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import logo from "../assets/imgs/logo.png";
 import FormsLoginSigin from "../components/FormsLoginSigin";
+import { devices } from "../sizes/sizesScreen";
 
 export default function Login(){
     return(
@@ -47,6 +48,26 @@ p{
     font-size: 26px;
     line-height: 10px;
 }
+@media (max-width:768px) {
+    width: 100%;
+    padding-bottom: 5%;
+    justify-content: center;
+    padding-left: 0%;
+    align-items: center;
+}
+@media (max-width:425px) {
+    width: 100%;
+    padding-bottom: 5%;
+    justify-content: center;
+    padding-left: 0%;
+    align-items: center;
+    h1{
+        font-size: 36px;
+    }
+    p{
+        font-size: 18px;
+    }
+}
 
 `
 const Rigth = styled.div`
@@ -65,6 +86,9 @@ const Conteiner = styled.div`
 display: flex;
 width: 100%;
 height: 100vh;
+@media (max-width:768px) {
+    flex-direction:column;
+}
 
 `
 const Inputs = styled.div`
