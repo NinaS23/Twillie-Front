@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "../sizes/sizesScreen";
+import { Link } from 'react-router-dom';
 
 export default function FormsLoginSigin({
     type
@@ -21,7 +21,7 @@ export default function FormsLoginSigin({
                     </h3>
                 </ButtonRegister>
                 <SubTitle>
-                    <h4>still don't have an account? click here and sign up</h4>
+                    <StyledLink to={"sing-up"}><h4>still don't have an account? click here and sign up</h4></StyledLink>
                 </SubTitle>
             </>
         )
@@ -96,8 +96,13 @@ h4{
     font-weight: 400;
     font-size: 16px;
     line-height: 10px;
-}
+    margin-right: 12%;
+}  
+`
+const StyledLink = styled(Link)`
+text-align: center;
+text-align: center;
+color: #333333;
+text-decoration: overline;
 
-
-  
 `

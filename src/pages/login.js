@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import logo from "../assets/imgs/logo.png";
 import FormsLoginSigin from "../components/FormsLoginSigin";
-import { devices } from "../sizes/sizesScreen";
+
 
 export default function Login(){
     return(
@@ -29,11 +29,11 @@ export default function Login(){
 const Left = styled.div`
 display: flex;
 flex-direction: column;
-padding-top: 16%;
 padding-left: 5%;
 background-color: #5897D6;
 width: 60%;
 h1{
+    margin-top: 30%;
     color: #f5fffb;
     font-family: 'passione one', serif;
     font-weight: 600;
@@ -50,21 +50,29 @@ p{
 }
 @media (max-width:768px) {
     width: 100%;
-    padding-bottom: 5%;
+    h1{
+        margin-top: 5% ;
+    }
+    p{
+        margin-bottom: 5%;
+    }
+    width: 100%;
     justify-content: center;
     padding-left: 0%;
     align-items: center;
 }
 @media (max-width:425px) {
     width: 100%;
-    padding-bottom: 5%;
+    height: 100vh;
     justify-content: center;
     padding-left: 0%;
     align-items: center;
     h1{
+        margin-top: 5% ;
         font-size: 36px;
     }
     p{
+        margin-bottom: 5%;
         font-size: 18px;
     }
 }
@@ -86,7 +94,9 @@ img{
     height: 64%;
   }
   @media (max-width: 375px) {
-      padding-top: 19%;
+     img{
+         margin-top: 15%;
+     }
     width: 100%;
     height: 64%;
   }
@@ -94,7 +104,7 @@ img{
 
 const Conteiner = styled.div`
 display: flex;
-width: 100%;
+width: 100vw;
 height: 100vh;
 @media (max-width:768px) {
     flex-direction:column;
