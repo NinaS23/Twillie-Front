@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import home from "../assets/imgs/home.png"
+import logo from "../assets/imgs/logo.png"
 import FormsLoginSigin from "../components/FormsLoginSigin";
 
 
@@ -9,7 +9,7 @@ export default function SingUp(){
         <Conteiner>
           
             <Rigth>
-            <img src={home} alt="" />
+            <img src={logo} alt="" />
                     <Inputs>
 
                         <FormsLoginSigin
