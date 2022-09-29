@@ -59,6 +59,7 @@ const Input = styled.input`
     border-style: outset;
   border-color: #5897D6;
   border-width: 1px;
+  border-radius: 18px;
   ::placeholder{
 
     font-family: 'kanit', serif;
@@ -84,6 +85,7 @@ const ButtonRegister = styled.button`
  width: 80%;
  margin-left: 10%;
  margin-top: 5%;
+ border-radius: 18px;
  background-color: #5897D6;
   border-style: none;
   &:hover {
