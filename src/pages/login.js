@@ -30,7 +30,7 @@ const Left = styled.div`
 display: flex;
 flex-direction: column;
 padding-left: 5%;
-background-color: #5897D6;
+background-color: #2D4CAD;
 width: 60%;
 h1{
     margin-top: 30%;

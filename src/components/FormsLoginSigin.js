@@ -86,7 +86,7 @@ const ButtonRegister = styled.button`
  margin-left: 10%;
  margin-top: 5%;
  border-radius: 18px;
- background-color: #5897D6;
+ background-color: #0A73E9;
   border-style: none;
   &:hover {
     background-color: lightblue;
