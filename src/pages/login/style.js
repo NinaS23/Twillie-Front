@@ -1,30 +1,4 @@
 import styled from "styled-components";
-import logo from "../assets/imgs/logo.png"
-import FormsLoginSigin from "../components/FormsLoginSigin";
-
-
-export default function Login(){
-    return(
-        <>
-        <Conteiner>
-        <Left>
-            <h1>Welcome To Twillie</h1>
-            <p>the best place to organize your life</p>
-        </Left>    
-            <Rigth>
-                    <img src={logo} alt="twillie logo" />
-                    <Inputs>
-
-                        <FormsLoginSigin
-                           type={"login"}
-                        />
-
-                    </Inputs>
-                </Rigth>
-        </Conteiner>
-        </>
-    )
-}
 
 const Left = styled.div`
 display: flex;
@@ -116,4 +90,9 @@ height: 100vh;
 `
 const Inputs = styled.div`
 `
-
+export{
+    Conteiner,
+    Inputs,
+    Rigth,
+    Left
+}
