@@ -23,7 +23,7 @@ export default function TwillieMainContent() {
                     <ButtonOptions><h3>gráfico</h3></ButtonOptions>
                 </Options>
                 <ImageConteiner>
-                    <img src={grafico} alt="" />
+                    <img src={grafico} alt="animação de pessoas" />
                 </ImageConteiner>
             </Content>
         </Conteiner>
@@ -129,7 +129,9 @@ const ButtonOptions = styled.button`
  background-color: #6375A9;
   border-style: none;
   &:hover {
-    background-color: lightblue;
+      background-color: lightblue;
+      filter: brightness(0.9);
+      cursor: pointer;
   }
   h3{
     font-family: 'kanit', serif;

@@ -48,6 +48,7 @@ const ButtonRegister = styled.button`
   border-style: none;
   &:hover {
     background-color: lightblue;
+    cursor: pointer;
   }
   h3{
     font-family: 'kanit', serif;
