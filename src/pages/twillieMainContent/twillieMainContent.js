@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import homeTwillie from "../../assets/imgs/homeTwillie.png";
 import grafico from "../../assets/imgs/grafico.png";
+import { useNavigate } from "react-router-dom";
 
 
 export default function TwillieMainContent() {
-
+  const navigate = useNavigate()
     return (
         <Conteiner>
             <Header>
@@ -12,7 +13,7 @@ export default function TwillieMainContent() {
                     <img src={homeTwillie} alt="foto de perfil" />
                     <h2>Wolf</h2>
                 </div>
-                <Icon>
+                <Icon onClick={() => navigate("/login")}>
                 <ion-icon name="exit"></ion-icon>
                 </Icon>
             </Header>
