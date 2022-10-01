@@ -5,9 +5,9 @@ import homeTwillie from "../../assets/imgs/homeTwillie.png"
 export default function TwillieMain() {
   const navigate = useNavigate();
 
-/*   setTimeout(() => {
+   setTimeout(() => {
     navigate("/main");
-  }, 5000); */
+  }, 4000); 
 
   return (
     <Conteiner>
