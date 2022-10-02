@@ -6,7 +6,7 @@ import { Header, Icon } from "../twillieMainContent/style";
 export default function Wallet() {
     const navigate = useNavigate()
     const list = [
-        { id: 0, name: 'escolha uma opção' },
+        { id: 0, name: 'escolha' },
         { id: 1, name: 'Entrada Fixa' },
         { id: 2, name: 'Entrada Váriavel' },
         { id: 3, name: 'Saída Fixa' },
@@ -143,6 +143,8 @@ ion-icon{
 `
 
 const IconsTransections = styled.div`
+position: fixed;
+margin-left: 15%;
 ion-icon{
     color: #0A193C;
 }
@@ -164,6 +166,11 @@ width: 100%;
 height: 27%;
 display: flex;
 align-items: center;
+@media (max-width: 796px) {
+   overflow-y: auto;
+
+  }
+
 `
 
 const Card = styled.div`
@@ -184,9 +191,15 @@ color: #FFFFFF;
 font-family: 'RocknRoll One';
 font-style: normal;
 font-weight: 400;
-font-size: 90%;
+font-size: 14px;
 line-height: 20px;
 }
+@media (max-width: 796px) {
+   width: 200px;
+   h2{
+       font-size: 11px;
+   }
+  }
 div{
     display: flex;
   
@@ -203,6 +216,9 @@ line-height: 29px;
 display: flex;
 align-items: center;
 color: #FFFFFF;
+@media (max-width: 796px) {
+   font-size: 12px;
+  }
 
 `
 const Transections = styled.div`
@@ -213,6 +229,7 @@ justify-content: center;
 height: 10%;
 margin-top: 3%;
 padding-right: 40px;
+
 
 `
 const Transection = styled.div`
@@ -300,6 +317,7 @@ font-size: 20px;
 line-height: 29px;
 display: flex;
 color: #FFFFFF;
+
 `
 const Register = styled.div`
 display: flex;
