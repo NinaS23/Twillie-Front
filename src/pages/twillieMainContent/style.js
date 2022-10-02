@@ -61,7 +61,7 @@ div{
     display: flex;
 }
 h2{
-margin-left: 5%;
+margin-left: 6%;
 width: 30px;
 font-family: 'RocknRoll One';
 font-style: normal;

@@ -20,7 +20,7 @@ export default function TwillieMainContent() {
             </Header>
             <Content>
                 <Options>
-                    <ButtonOptions><h3>Wallet</h3></ButtonOptions>
+                    <ButtonOptions onClick={() => navigate("/wallet")}><h3>Wallet</h3></ButtonOptions>
                     <ButtonOptions><h3>investimento</h3></ButtonOptions>
                     <ButtonOptions><h3>gráfico</h3></ButtonOptions>
                 </Options>
