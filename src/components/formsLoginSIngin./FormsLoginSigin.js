@@ -108,7 +108,7 @@ export default function FormsLoginSigin({
                     ) : (
                         <ButtonRegister type="subimit">
                             <h3>
-                                sing up
+                                cadastre-se
                             </h3>
                         </ButtonRegister>
                     )}
@@ -158,7 +158,7 @@ export default function FormsLoginSigin({
                     ) : (
                         <ButtonRegister type="subimit">
                             <h3>
-                                sing in
+                               login
                             </h3>
                         </ButtonRegister>
                     )}
