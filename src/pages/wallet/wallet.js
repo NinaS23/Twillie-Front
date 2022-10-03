@@ -1,6 +1,5 @@
 
 import { useNavigate } from "react-router-dom";
-import homeTwillie from "../../assets/imgs/homeTwillie.png";
 import { Header, Icon } from "../twillieMainContent/style";
 import {
     Conteiner,
@@ -26,6 +25,7 @@ import {
 
 export default function Wallet() {
     const navigate = useNavigate()
+    const profilePic = localStorage.getItem("profilePicture")
     const list = [
         { id: 0, name: 'escolha' },
         { id: 1, name: 'Entrada Fixa' },
@@ -38,7 +38,7 @@ export default function Wallet() {
         <Conteiner>
             <Header>
                 <div>
-                    <img src={homeTwillie} alt="foto de perfil" />
+                    <img src={profilePic} alt="foto de perfil" />
                     <h2>wallet</h2>
                 </div>
                 <Icon onClick={() => navigate("/login")}>
