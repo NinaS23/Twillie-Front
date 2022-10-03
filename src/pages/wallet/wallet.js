@@ -1,6 +1,9 @@
 
 import { useNavigate } from "react-router-dom";
 import { Header, Icon } from "../twillieMainContent/style";
+import { api } from "../../services/apiService";
+import { TransectionRegister } from "../../components/transectionRegister";
+import React from "react";
 import {
     Conteiner,
     Content,
@@ -25,8 +28,20 @@ import {
     Center
 } from "./style";
 
+
 export default function Wallet() {
     const navigate = useNavigate()
+    const [TransectionDone,setTransectionDone] = React.useState(0);
+    const [isLoading, setIsLoading] = React.useState(false);
+    const [registers , setRegisters] = React.useState([])
+    const [enable, setEnable] = React.useState(false);
+    const [currentBalance , setCurrentBalance] = React.useState(0)
+
+    const [value, setValue] = React.useState("");
+    const [type, setType] = React.useState("");
+    const [description, setDescription] = React.useState("");
+
+    const token = localStorage.getItem("token");
     const profilePic = localStorage.getItem("profilePicture")
     const list = [
         { id: 0, name: 'escolha' },
@@ -35,6 +50,97 @@ export default function Wallet() {
         { id: 3, name: 'Saída Fixa' },
         { id: 4, name: 'Saída Váriavel' }
     ];
+    let body = {}
+
+    if (type === "Entrada Fixa") {
+        body = {
+            description: description,
+            fixedEntry: Number(value),
+            variableEntry: 0,
+            fixedOutput: 0,
+            variableOutput: 0
+        }
+    } else if (type === "Entrada Váriavel") {
+        body = {
+            description: description,
+            fixedEntry: 0,
+            variableEntry: Number(value),
+            fixedOutput: 0,
+            variableOutput: 0
+        }
+    }else if(type === "Saída Fixa"){
+          body ={
+            description: description,
+            fixedEntry: 0,
+            variableEntry: 0,
+            fixedOutput: Number(value),
+            variableOutput: 0
+          }
+    }else{
+     body ={
+            description: description,
+            fixedEntry: 0,
+            variableEntry: 0,
+            fixedOutput: Number(value),
+            variableOutput: 0
+          }
+    }
+
+    async function getBalance(e) {
+        try {
+            const config = { headers: { Authorization: `Bearer ${token}` } };
+         
+        api
+        .get(`/balance`, config)
+        .then(({ data }) => {
+            setCurrentBalance(data.lastBalance)
+        })
+          
+        } catch (error) {
+            console.log(error)
+            alert("can`t getBalance");
+        } 
+    }
+
+    async function getRegisters(e) {
+        try {
+            const config = { headers: { Authorization: `Bearer ${token}` } };  
+        api
+        .get(`/wallet`, config)
+        .then(({ data }) => {
+            console.log(data)
+            setRegisters(data);
+        })
+          
+        } catch (error) {
+            console.log(error)
+            alert("can`t getBalance");
+        } 
+    }
+
+    async function postTransection(e) {
+        console.log("entrei no post")
+        try {
+            setIsLoading(true);
+            setEnable(true);
+            const config = { headers: { Authorization: `Bearer ${token}` } };
+            api.post(`/wallet`, body, config);
+
+            setIsLoading(true)
+        } catch (error) {
+            console.log(error)
+            alert(error.response.data);
+        } finally {
+            setTransectionDone(0)
+            setIsLoading(false);
+            setEnable(false);
+        }
+    }
+console.log(TransectionDone)
+    React.useEffect(() => {
+        getBalance();
+        getRegisters();
+      }, [TransectionDone,isLoading]);
 
     return (
         <Conteiner>
@@ -74,7 +180,7 @@ export default function Wallet() {
                                 <ion-icon name="cash-outline"></ion-icon>
                             </IconsTransections>
                         </div>
-                        <Value>RS 00,00</Value>
+                        <Value>RS {currentBalance.toFixed(2).replace(".", ",")}</Value>
                     </Card>
                 </Cards>
                 <Center>
@@ -85,6 +191,9 @@ export default function Wallet() {
                                 id="description"
                                 type="text"
                                 required
+                                disabled={enable}
+                                value={description}
+                                onChange={e => setDescription(e.target.value)}
                             ></Input>
                         </Transection>
                         <Transection>
@@ -92,7 +201,9 @@ export default function Wallet() {
                             <SelectType
                                 name="select"
                                 className="inputText"
+                                disabled={enable}
                                 required
+                                onChange={e => setType(e.target.value)}
                             >
                                 {list.map((item, index) => (
                                     <Option value={item.name}>{item.name}</Option>
@@ -104,58 +215,27 @@ export default function Wallet() {
                             <Input
                                 id="number"
                                 type="text"
+                                disabled={enable}
                                 required
+                                value={value}
+                                onChange={e => setValue(e.target.value)}
                             ></Input>
                         </Transection>
-                        <SubimitTransection>
-                            <ButtonTransection><h2>Registrar</h2></ButtonTransection>
-                        </SubimitTransection>
+                      
+                     
+                            <SubimitTransection>
+                                <ButtonTransection onClick={() => postTransection()}><h2>Registrar</h2></ButtonTransection>
+                            </SubimitTransection>
+                  
                     </Transections>
                 </Center>
                 <div>
                     <ListTransections>
-                        <TransectionBlock>
-                            <Divisor>
-                                <Register>
-                                    <h2>description bla bla bla bla</h2>
-                                    <h3>tipo da transição</h3>
-                                </Register>
-                                <BalanceRegister>
-                                    <ValueRegister>valor</ValueRegister>
-                                    <Trash>
-                                        <ion-icon name="trash-bin-outline"></ion-icon>
-                                    </Trash>
-                                </BalanceRegister>
-                            </Divisor>
-                        </TransectionBlock>
-                        <TransectionBlock>
-                            <Divisor>
-                                <Register>
-                                    <h2>description bla bla bla bla</h2>
-                                    <h3>tipo da transição</h3>
-                                </Register>
-                                <BalanceRegister>
-                                    <ValueRegister>valor</ValueRegister>
-                                    <Trash>
-                                        <ion-icon name="trash-bin-outline"></ion-icon>
-                                    </Trash>
-                                </BalanceRegister>
-                            </Divisor>
-                        </TransectionBlock>
-                        <TransectionBlock>
-                            <Divisor>
-                                <Register>
-                                    <h2>description bla bla bla bla</h2>
-                                    <h3>tipo da transição</h3>
-                                </Register>
-                                <BalanceRegister>
-                                    <ValueRegister>valor</ValueRegister>
-                                    <Trash>
-                                        <ion-icon name="trash-bin-outline"></ion-icon>
-                                    </Trash>
-                                </BalanceRegister>
-                            </Divisor>
-                        </TransectionBlock>
+                    {registers.length > 0 ? (
+                     <h1>tem</h1>
+                    ) : (
+                       <h1>Sem transações ainda</h1>
+                    )}
                     </ListTransections>
                 </div>
             </Content>
