@@ -2,6 +2,9 @@ import { Inputs, Form, ButtonRegister, SubTitle, StyledLink } from "./style"
 import { ThreeDots } from "react-loader-spinner";
 import { api } from "../../services/apiService";
 import { useNavigate } from "react-router-dom";
+import { notifyError } from "../../utils/toast";
+import { toast } from 'react-toastify';
+
 import React from "react";
 
 export default function FormsLoginSigin({
@@ -19,6 +22,7 @@ export default function FormsLoginSigin({
     const [isLoading, setIsLoading] = React.useState(false);
     const [enable, setEnable] = React.useState(false);
     const navigate = useNavigate();
+   
 
     async function sendFormes(e) {
         try {
@@ -43,9 +47,7 @@ export default function FormsLoginSigin({
 
             navigate(pathFront);
         } catch (error) {
-            alert(
-                'Invalid email or password, check your credentials',
-            );
+           alert("credentials are incorrect,please verify");
         } finally {
             setEnable(false)
             setIsLoading(false);

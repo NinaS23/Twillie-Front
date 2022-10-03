@@ -19,8 +19,10 @@ import {
     Divisor,
     Register,
     BalanceRegister,
-    ValueRegister
-
+    ValueRegister,
+    SubimitTransection,
+    ButtonTransection,
+    Center
 } from "./style";
 
 export default function Wallet() {
@@ -75,36 +77,41 @@ export default function Wallet() {
                         <Value>RS 00,00</Value>
                     </Card>
                 </Cards>
-                <Transections>
-                    <Transection>
-                        <h3>descrição</h3>
-                        <Input
-                            id="description"
-                            type="text"
-                            required
-                        ></Input>
-                    </Transection>
-                    <Transection>
-                        <h3>Tipo</h3>
-                        <SelectType
-                            name="select"
-                            className="inputText"
-                            required
-                        >
-                            {list.map((item, index) => (
-                                <Option value={item.name}>{item.name}</Option>
-                            ))}
-                        </SelectType>
-                    </Transection>
-                    <Transection>
-                        <h3>Valor</h3>
-                        <Input
-                            id="number"
-                            type="text"
-                            required
-                        ></Input>
-                    </Transection>
-                </Transections>
+                <Center>
+                    <Transections>
+                        <Transection>
+                            <h3>descrição</h3>
+                            <Input
+                                id="description"
+                                type="text"
+                                required
+                            ></Input>
+                        </Transection>
+                        <Transection>
+                            <h3>Tipo</h3>
+                            <SelectType
+                                name="select"
+                                className="inputText"
+                                required
+                            >
+                                {list.map((item, index) => (
+                                    <Option value={item.name}>{item.name}</Option>
+                                ))}
+                            </SelectType>
+                        </Transection>
+                        <Transection>
+                            <h3>Valor</h3>
+                            <Input
+                                id="number"
+                                type="text"
+                                required
+                            ></Input>
+                        </Transection>
+                        <SubimitTransection>
+                            <ButtonTransection><h2>Registrar</h2></ButtonTransection>
+                        </SubimitTransection>
+                    </Transections>
+                </Center>
                 <div>
                     <ListTransections>
                         <TransectionBlock>

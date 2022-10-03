@@ -15,7 +15,8 @@ ion-icon{
 `
 
 const IconsTransections = styled.div`
-position: fixed;
+position: absolute;
+
 margin-left: 15%;
 ion-icon{
     color: #0A193C;
@@ -99,10 +100,30 @@ display: flex;
 align-items: center;
 justify-content: center;
 height: 10%;
-margin-top: 3%;
-padding-right: 40px;
+margin-top: 1.5%;
+margin-left: 2.5%;
+div{
+  width: 100%;
+}
 
+  @media (max-width: 796px) {
+   display: flex;
+   margin-left: 0%;
+   flex-direction: column;
+   width: 70%;
+  }
+`
 
+const Center = styled.div`
+
+@media (max-width: 796px) {
+  display: flex;
+width: 100%;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+ 
+  }
 `
 const Transection = styled.div`
 width: 30%;
@@ -113,6 +134,10 @@ h3{
     font-size: 13px;
     margin-bottom: 2%;
 }
+@media (max-width: 796px) {
+   margin-top: 3%;
+   margin-left: 15%;
+  }
 `
 
 const Input = styled.input`
@@ -142,7 +167,7 @@ const Option = styled.option`
 
 
 const ListTransections = styled.div`
-margin-top: 2%;
+margin-top: 3%;
 margin:4px, 4px;
 padding:4px;
 background-color: #FFFFFF;
@@ -150,6 +175,9 @@ width: 100%;
 height: 250px;
 overflow-y: auto;
 align-content: center;
+@media (max-width: 796px) {
+  margin-top: 4%;
+  }
 
 
 `
@@ -215,8 +243,48 @@ align-items: center;
 color: #FFFFFF;
 }
 `
+const SubimitTransection = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color:#FFFFFF;
+margin-top: 1%;
+@media (max-width: 796px) {
+  margin-top: 3%;
 
+  }
 
+`
+const ButtonTransection = styled.button`
+width: 80%;
+height: 30px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+border-style: none;
+ border-radius:18px;
+ background-color:#6375A9;
+ &:hover {
+    background-color: lightblue;
+    cursor: pointer;
+  }
+ h2{
+  font-family: 'RocknRoll One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  color:#FFFFFF ;
+ }
+ @media (max-width: 796px) {
+   margin-left: 14%;
+   width: 60%;
+  }
+`
 export {
     Card,
     Cards,
@@ -235,5 +303,8 @@ export {
     Transection,
     Transections,
     Value,
-    Trash
+    Trash,
+    SubimitTransection,
+    ButtonTransection,
+    Center
 }
