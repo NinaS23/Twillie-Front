@@ -2,7 +2,8 @@
 import { useNavigate } from "react-router-dom";
 import homeTwillie from "../../assets/imgs/homeTwillie.png";
 import { Header, Icon } from "../twillieMainContent/style";
-import { Conteiner,
+import {
+    Conteiner,
     Content,
     Cards,
     Card,
@@ -77,14 +78,18 @@ export default function Wallet() {
                 <Transections>
                     <Transection>
                         <h3>descrição</h3>
-                        <Input id="description" type="text" ></Input>
+                        <Input
+                            id="description"
+                            type="text"
+                            required
+                        ></Input>
                     </Transection>
                     <Transection>
                         <h3>Tipo</h3>
                         <SelectType
                             name="select"
                             className="inputText"
-
+                            required
                         >
                             {list.map((item, index) => (
                                 <Option value={item.name}>{item.name}</Option>
@@ -93,11 +98,15 @@ export default function Wallet() {
                     </Transection>
                     <Transection>
                         <h3>Valor</h3>
-                        <Input id="number" type="text"  ></Input>
+                        <Input
+                            id="number"
+                            type="text"
+                            required
+                        ></Input>
                     </Transection>
                 </Transections>
                 <div>
-                <ListTransections>
+                    <ListTransections>
                         <TransectionBlock>
                             <Divisor>
                                 <Register>

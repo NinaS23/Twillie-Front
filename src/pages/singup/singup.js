@@ -1,9 +1,11 @@
+import { useState } from "react";
 import logo from "../../assets/imgs/logo.png";
 import FormsLoginSigin from "../../components/formsLoginSIngin./FormsLoginSigin";
-import { Rigth,Conteiner,Inputs } from "./style";
+import { Rigth, Conteiner, Inputs } from "./style";
 
-export default function SingUp(){
-    return(
+export default function SingUp() {
+
+    return (
         <>
         <Conteiner>
           
@@ -13,6 +15,8 @@ export default function SingUp(){
 
                         <FormsLoginSigin
                           type={"register"}
+                          pathFront={"/login"}
+                          pathBack={"/sing-up"}
                         />
 
                     </Inputs>

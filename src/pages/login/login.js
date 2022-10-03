@@ -17,6 +17,8 @@ export default function Login(){
 
                         <FormsLoginSigin
                            type={"login"}
+                           pathFront={"/home"}
+                           pathBack={"/sing-in"}
                         />
 
                     </Inputs>

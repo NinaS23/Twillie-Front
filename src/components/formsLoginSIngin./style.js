@@ -6,10 +6,10 @@ display: flex;
 flex-direction: column;
 align-items: center;
 width: 100%;
-height: 295px;
-padding-top: 20%;
+background-color: #FFFFFF;
+height: 100%;
 `
-const Input = styled.input`
+const Inputs = styled.input`
    height: 30px;
    width: 100%;
     margin-top: 5%;
@@ -41,7 +41,7 @@ a{
 const ButtonRegister = styled.button`
  height: 30px;
  width: 80%;
- margin-left: 10%;
+ margin-left: 3%;
  margin-top: 5%;
  border-radius: 18px;
  background-color: #0A73E9;
@@ -57,7 +57,9 @@ const ButtonRegister = styled.button`
     color:#FFFFFF;
     line-height: 10px;
   }
-
+  div{
+    justify-content: center;
+  }
 `
 const SubTitle = styled.div`
 width:100% ;
@@ -81,6 +83,6 @@ export{
     SubTitle,
     ButtonRegister,
     RedirectRoute,
-    Input,
+    Inputs,
     Form
 }
