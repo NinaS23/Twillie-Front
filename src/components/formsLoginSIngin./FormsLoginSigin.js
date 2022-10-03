@@ -28,10 +28,20 @@ export default function FormsLoginSigin({
             let body = {}
             if (type === "register") body = { email, password, name, picture };
             if (type === "login") body = { email:loginEmail, password:loginPassword }
-            await api.post(`${pathBack}`, body);
+            const request = await api.post(`${pathBack}`, body);
+
+            if(type === "login"){
+            const token = request.data.token;
+            const profilePicture = request.data.picture; 
+            const userName = request.data.name;
+
+            localStorage.setItem("token", token);
+            localStorage.setItem("profilePicture", profilePicture);
+            localStorage.setItem("userName", userName);
+            }
+
             navigate(pathFront);
         } catch (error) {
-            console.log(error)
             alert(
                 'Invalid email or password, check your credentials',
             );

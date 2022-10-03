@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import logo from "../../assets/imgs/logo.png";
 import FormsLoginSigin from "../../components/formsLoginSIngin./FormsLoginSigin";
 import { Rigth, Conteiner, Inputs } from "./style";
@@ -10,7 +10,7 @@ export default function SingUp() {
         <Conteiner>
           
             <Rigth>
-            <img src={logo} alt="" />
+            <img src={logo} alt="logo twillie" />
                     <Inputs>
 
                         <FormsLoginSigin
