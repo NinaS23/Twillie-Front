@@ -1,18 +1,19 @@
 import { useNavigate } from "react-router-dom";
-import homeTwillie from "../../assets/imgs/homeTwillie.png";
 import grafico from "../../assets/imgs/grafico.png";
 import { Conteiner, Header, Icon, Options, ImageConteiner, ButtonOptions, Content } from "./style";
 
 
 
 export default function TwillieMainContent() {
-  const navigate = useNavigate()
+    const navigate = useNavigate()
+    const name = localStorage.getItem("userName")
+    const profilePic = localStorage.getItem("profilePicture")
     return (
         <Conteiner>
             <Header>
                 <div>
-                    <img src={homeTwillie} alt="foto de perfil" />
-                    <h2>Wolf</h2>
+                    <img src={profilePic} alt="foto de perfil" />
+                    <h2>{name}</h2>
                 </div>
                 <Icon onClick={() => navigate("/login")}>
                 <ion-icon name="exit"></ion-icon>
@@ -25,7 +26,7 @@ export default function TwillieMainContent() {
                     <ButtonOptions><h3>gráfico</h3></ButtonOptions>
                 </Options>
                 <ImageConteiner>
-                    <img src={grafico} alt="animação de pessoas" />
+                    <img src={grafico} alt="people with graphic" />
                 </ImageConteiner>
             </Content>
         </Conteiner>

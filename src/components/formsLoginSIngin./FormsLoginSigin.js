@@ -31,6 +31,7 @@ export default function FormsLoginSigin({
             const request = await api.post(`${pathBack}`, body);
 
             if(type === "login"){
+                console.log(request.data.name)
             const token = request.data.token;
             const profilePicture = request.data.picture; 
             const userName = request.data.name;
