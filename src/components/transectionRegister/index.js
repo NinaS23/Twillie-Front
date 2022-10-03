@@ -1,11 +1,11 @@
 import styled from "styled-components";
-export  function TransectionRegister(){
+export  function TransectionRegister({description,type}){
     return (
         <TransectionBlock>
             <Divisor>
                 <Register>
-                    <h2>description bla bla bla bla</h2>
-                    <h3>tipo da transição</h3>
+                    <h2>{description}</h2>
+                    <h3>{type}</h3>
                 </Register>
                 <BalanceRegister>
                     <ValueRegister>valor</ValueRegister>
