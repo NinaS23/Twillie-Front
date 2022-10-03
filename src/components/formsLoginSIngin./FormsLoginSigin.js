@@ -113,7 +113,7 @@ export default function FormsLoginSigin({
                         </ButtonRegister>
                     )}
                     <SubTitle>
-                        <StyledLink to={"/login"}><h4>let`s go back to login</h4></StyledLink>
+                        <StyledLink to={"/login"}><h4>clique aqui e volte ao login</h4></StyledLink>
                     </SubTitle>
                 </Form>
             </>
@@ -163,7 +163,7 @@ export default function FormsLoginSigin({
                         </ButtonRegister>
                     )}
                     <SubTitle>
-                        <StyledLink to={"/sing-up"}><h4>still don't have an account? click here and sign up</h4></StyledLink>
+                        <StyledLink to={"/sing-up"}><h4>não tem uma conta? clique aqui e cadastre-se</h4></StyledLink>
                     </SubTitle>
                 </Form>
             </>

@@ -8,8 +8,8 @@ export default function Login(){
         <>
         <Conteiner>
         <Left>
-            <h1>Welcome To Twillie</h1>
-            <p>the best place to organize your life</p>
+            <h1>Bem vindo ao Twillie</h1>
+            <p>O Melhor Lugar Para Organizar Sua vida</p>
         </Left>    
             <Rigth>
                     <img src={logo} alt="twillie logo" />

@@ -17,9 +17,8 @@ h1{
 p{
     color: #f5fffb;
     font-family: 'passione one', serif;
-    margin-left: 2%;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 24px;
     line-height: 10px;
 }
 @media (max-width:768px) {
