@@ -92,15 +92,16 @@ display: flex;
 align-items: center;
 justify-content: center;
 height: 10%;
+width: 100%;
 margin-top: 1.5%;
-margin-left: 2.5%;
+margin-left: 4%;
 div{
   width: 100%;
 }
 
   @media (max-width: 796px) {
    display: flex;
-   margin-left: 0%;
+   margin-left: 4%;
    flex-direction: column;
    width: 70%;
   }
@@ -111,15 +112,12 @@ const Center = styled.div`
 @media (max-width: 796px) {
   display: flex;
 width: 100%;
-align-items: center;
 flex-direction: column;
-justify-content: center;
+margin-left: 4%;
  
   }
 `
 const Transection = styled.div`
-width: 30%;
-margin-left: 2%;
 h3{
     font-family: 'RocknRoll One';
     color: #0A193C;
@@ -129,20 +127,27 @@ h3{
 @media (max-width: 796px) {
    margin-top: 3%;
    margin-left: 15%;
+   h3{
+     margin-right: 13%;
+   }
   }
+
 `
 
 const Input = styled.input`
-width: 100%;
+width: 70%;
 border-radius: 18px;
 border-style: none;
 background-color: #e9e4ee;
-
+@media (max-width: 796px) {
+    width: 100%;
+    margin-top: 2%;
+  }
 
 `
 
 const SelectType = styled.select`
-width: 100%;
+width: 50%;
 border-radius: 18px;
 border-style: none;
 background-color: #e9e4ee;
@@ -187,7 +192,7 @@ background-color:#FFFFFF;
 margin-top: 1%;
 @media (max-width: 796px) {
   margin-top: 3%;
-
+margin-right: 15%;
   }
 
 `
@@ -217,7 +222,28 @@ border-style: none;
  }
  @media (max-width: 796px) {
    margin-left: 14%;
-   width: 60%;
+   width: 50%;
+  }
+`
+
+const Information = styled.div`
+justify-content: center;
+align-items: center;
+display: flex;
+flex-direction: column;
+h1{
+  margin-top: 5%;
+  font-family: 'RocknRoll One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  color:  #0A193C;
+}
+@media (max-width: 796px) {
+margin-left: 11%;
   }
 `
 export {
@@ -235,5 +261,6 @@ export {
     Value,
     SubimitTransection,
     ButtonTransection,
-    Center
+    Center,
+    Information
 }

@@ -5,24 +5,17 @@ import { api } from "../../services/apiService";
 import { TransectionRegister } from "../../components/transectionRegister";
 import React from "react";
 import {
+    Information,
     Conteiner,
     Content,
     Cards,
     Card,
-    Trash,
     IconsTransections,
     Value,
     Transections,
     Transection,
     Input,
     ListTransections,
-    Option,
-    SelectType,
-    TransectionBlock,
-    Divisor,
-    Register,
-    BalanceRegister,
-    ValueRegister,
     SubimitTransection,
     ButtonTransection,
     Center
@@ -37,54 +30,15 @@ export default function Wallet() {
     const [enable, setEnable] = React.useState(false);
     const [currentBalance , setCurrentBalance] = React.useState(0)
 
-    const [value, setValue] = React.useState("");
-    const [type, setType] = React.useState("");
+    const [variableEntry, setVariableEntry] = React.useState("");
+    const [variableOutput, setVariableOutput] = React.useState("");
+    const [fixedOutput, setFixedOutput] = React.useState("");
+    const [fixedEntry, setFixedEntry] = React.useState("");
     const [description, setDescription] = React.useState("");
 
     const token = localStorage.getItem("token");
     const profilePic = localStorage.getItem("profilePicture")
-    const list = [
-        { id: 0, name: 'escolha' },
-        { id: 1, name: 'Entrada Fixa' },
-        { id: 2, name: 'Entrada Váriavel' },
-        { id: 3, name: 'Saída Fixa' },
-        { id: 4, name: 'Saída Váriavel' }
-    ];
-    let body = {}
-
-    if (type === "Entrada Fixa") {
-        body = {
-            description: description,
-            fixedEntry: Number(value),
-            variableEntry: 0,
-            fixedOutput: 0,
-            variableOutput: 0
-        }
-    } else if (type === "Entrada Váriavel") {
-        body = {
-            description: description,
-            fixedEntry: 0,
-            variableEntry: Number(value),
-            fixedOutput: 0,
-            variableOutput: 0
-        }
-    }else if(type === "Saída Fixa"){
-          body ={
-            description: description,
-            fixedEntry: 0,
-            variableEntry: 0,
-            fixedOutput: Number(value),
-            variableOutput: 0
-          }
-    }else{
-     body ={
-            description: description,
-            fixedEntry: 0,
-            variableEntry: 0,
-            fixedOutput: Number(value),
-            variableOutput: 0
-          }
-    }
+ 
 
     async function getBalance(e) {
         try {
@@ -123,6 +77,13 @@ export default function Wallet() {
         try {
             setIsLoading(true);
             setEnable(true);
+            const body = {
+                "fixedEntry": Number(fixedEntry),
+                "variableEntry":Number(variableEntry),
+                "fixedOutput": Number(fixedOutput),
+                "variableOutput":Number(variableOutput),
+                "description":description
+              }
             const config = { headers: { Authorization: `Bearer ${token}` } };
             api.post(`/wallet`, body, config);
 
@@ -197,45 +158,63 @@ console.log(TransectionDone)
                             ></Input>
                         </Transection>
                         <Transection>
-                            <h3>Tipo</h3>
-                            <SelectType
-                                name="select"
-                                className="inputText"
-                                disabled={enable}
+                            <h3>Entrada fixa</h3>
+                            <Input
+                                id="description"
+                                type="text"
                                 required
-                                onChange={e => setType(e.target.value)}
-                            >
-                                {list.map((item, index) => (
-                                    <Option value={item.name}>{item.name}</Option>
-                                ))}
-                            </SelectType>
+                                disabled={enable}
+                                value={fixedEntry}
+                                onChange={e => setFixedEntry(e.target.value)}
+                            ></Input>
                         </Transection>
                         <Transection>
-                            <h3>Valor</h3>
+                            <h3>Entrada Variável</h3>
+                            <Input
+                                id="description"
+                                type="text"
+                                required
+                                disabled={enable}
+                                value={variableEntry}
+                                onChange={e => setVariableEntry(e.target.value)}
+                            ></Input>
+                        </Transection>
+                        <Transection>
+                            <h3>Saída Fixa</h3>
+                            <Input
+                                id="description"
+                                type="text"
+                                required
+                                disabled={enable}
+                                value={fixedOutput}
+                                onChange={e => setFixedOutput(e.target.value)}
+                            ></Input>
+                        </Transection>
+                        <Transection>
+                            <h3>Saída Váriavel</h3>
                             <Input
                                 id="number"
                                 type="text"
                                 disabled={enable}
                                 required
-                                value={value}
-                                onChange={e => setValue(e.target.value)}
+                                value={variableOutput}
+                                onChange={e => setVariableOutput(e.target.value)}
                             ></Input>
                         </Transection>
-                      
-                     
-                            <SubimitTransection>
-                                <ButtonTransection onClick={() => postTransection()}><h2>Registrar</h2></ButtonTransection>
-                            </SubimitTransection>
-                  
                     </Transections>
+                    <SubimitTransection>
+                        <ButtonTransection onClick={() => postTransection()}><h2>Registrar</h2></ButtonTransection>
+                    </SubimitTransection>
                 </Center>
                 <div>
                     <ListTransections>
-                    {registers.length > 0 ? (
-                     <h1>tem</h1>
-                    ) : (
-                       <h1>Sem transações ainda</h1>
-                    )}
+                        {registers.length > 0 ? (
+                            <h1>tem</h1>
+                        ) : (
+                            <Information>
+                                <h1>Sem transações ainda</h1>
+                            </Information>
+                        )}
                     </ListTransections>
                 </div>
             </Content>
