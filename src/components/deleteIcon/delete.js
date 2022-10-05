@@ -81,7 +81,6 @@ const Conteudo = styled.div`
   }
   width: 14px;
   height: 14px;
-  background-color: #171717;
 `;
 
 const ModalStyle = styled.div`

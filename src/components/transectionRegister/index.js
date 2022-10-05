@@ -98,6 +98,6 @@ right: 0;
 align-items: center;
 ion-icon{
 
-    color: #0A193C;
+    color: black;
 }
 `
