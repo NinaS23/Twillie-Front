@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import { Header, Icon } from "../twillieMainContent/style";
+import {  Icon } from "../twillieMainContent/style";
 import { api } from "../../services/apiService";
 import { TransectionRegister } from "../../components/transectionRegister";
 import React from "react";
@@ -12,6 +12,7 @@ import {
     Card,
     IconsTransections,
     Value,
+    Header,
     Transections,
     Transection,
     Input,
@@ -91,7 +92,6 @@ export default function Wallet() {
            
           setIsLoading(true)
         } catch (error) {
-            console.log(error)
             alert(error.response.data);
         } finally {
             setIsLoading(false);
@@ -102,7 +102,7 @@ console.log(isLoading)
     React.useEffect(() => {
         getBalance();
         getRegisters();
-      }, [transectionDone]);
+      }, [isLoading]);
 
     return (
         <Conteiner>

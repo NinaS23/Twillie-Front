@@ -2,9 +2,6 @@ import { Inputs, Form, ButtonRegister, SubTitle, StyledLink } from "./style"
 import { ThreeDots } from "react-loader-spinner";
 import { api } from "../../services/apiService";
 import { useNavigate } from "react-router-dom";
-import { notifyError } from "../../utils/toast";
-import { toast } from 'react-toastify';
-
 import React from "react";
 
 export default function FormsLoginSigin({
@@ -35,7 +32,6 @@ export default function FormsLoginSigin({
             const request = await api.post(`${pathBack}`, body);
 
             if(type === "login"){
-                console.log(request.data.name)
             const token = request.data.token;
             const profilePicture = request.data.picture; 
             const userName = request.data.name;

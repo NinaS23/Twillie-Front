@@ -1,10 +1,41 @@
 import styled from "styled-components";
 
 const Conteiner = styled.div`
-width: 100vw;
-
+width: 100%;
 
 `
+
+const Header  = styled.div`
+background-color: blue;
+display: flex;
+width: 100%;
+justify-content: space-between;
+align-items: center;
+height: 70px;
+div{
+    display: flex;
+}
+h2{
+margin-left: 6%;
+width: 30px;
+font-family: 'RocknRoll One';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 52px;
+display: flex;
+align-items: center;
+color: #FFFFFF;
+}
+img{
+margin-left: 10%;
+width: 50px;
+height: 50px;
+border-radius: 50px;
+}
+
+`
+
 
 const IconsTransections = styled.div`
 position: absolute;
@@ -92,7 +123,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 height: 10%;
-width: 100%;
+width: 90%;
 margin-top: 1.5%;
 margin-left: 4%;
 div{
@@ -128,14 +159,14 @@ h3{
    margin-top: 3%;
    margin-left: 15%;
    h3{
-     margin-right: 13%;
+     margin-left: 4%;
    }
   }
 
 `
 
 const Input = styled.input`
-width: 70%;
+width: 90%;
 border-radius: 18px;
 border-style: none;
 background-color: #e9e4ee;
@@ -197,7 +228,7 @@ margin-right: 15%;
 
 `
 const ButtonTransection = styled.button`
-width: 80%;
+width: 70%;
 height: 30px;
 display: flex;
 justify-content: center;
@@ -222,7 +253,7 @@ border-style: none;
  }
  @media (max-width: 796px) {
    margin-left: 14%;
-   width: 50%;
+   width: 40%;
   }
 `
 
@@ -262,5 +293,6 @@ export {
     SubimitTransection,
     ButtonTransection,
     Center,
-    Information
+    Information,
+    Header
 }
