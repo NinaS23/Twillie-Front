@@ -1,14 +1,18 @@
 import styled from "styled-components";
-export  function TransectionRegister({description,type}){
+export function TransectionRegister({value, description, fixedEntry, variableEntry, fixedOutput, variableOutput }) {
+  
     return (
         <TransectionBlock>
             <Divisor>
                 <Register>
-                    <h2>{description}</h2>
-                    <h3>{type}</h3>
+                    <h3>{description}</h3>
+                    <h2>fixed entry: RS {fixedEntry.toFixed(2).replace(".", ",")}</h2>
+                    <h2>fixed output: -RS {fixedOutput.toFixed(2).replace(".", ",")}</h2>
+                    <h2>variable entry: RS {variableEntry.toFixed(2).replace(".", ",")}</h2>
+                    <h2>variable output: -RS {fixedOutput.toFixed(2).replace(".", ",")}</h2>
                 </Register>
                 <BalanceRegister>
-                    <ValueRegister>valor</ValueRegister>
+                    <ValueRegister>RS  {value.toFixed(2).replace(".", ",")}</ValueRegister>
                     <Trash>
                         <ion-icon name="trash-bin-outline"></ion-icon>
                     </Trash>
@@ -23,7 +27,8 @@ background-color: #6375A9;
 box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 margin-top: 2%;
 margin-left: 4%;
-height: 40%;
+height: 60%;
+position: relative;
 width: 90%;
 border-radius:9px;
 
@@ -35,17 +40,16 @@ justify-content: space-between;
 padding-right: 20px;
 padding-left: 20px;
 align-items: center;
-padding-top: 30px;
 `
 
 const Register = styled.div`
 display: flex;
-flex-direction: column;
+flex-direction:column;
 h2{
 font-family: 'RocknRoll One';
 font-style: normal;
 font-weight: 400;
-font-size: 16px;
+font-size: 10px;
 line-height: 29px;
 display: flex;
 align-items: center;
@@ -59,31 +63,37 @@ font-size: 14px;
 line-height: 29px;
 display: flex;
 align-items: center;
-color: #FFFFFF;
+color: #0A193C;
 }
 `
 const BalanceRegister = styled.div`
   display: flex;
-
+  width: 180px;
+  
 `
 
 const ValueRegister = styled.h2`
-margin-right: 10%;
+
 font-family: 'RocknRoll One';
 font-style: normal;
 font-weight: 400;
 font-size: 20px;
+margin-right:10%;
 line-height: 29px;
 display: flex;
-color: #FFFFFF;
+color: #0A193C;
 
 `
 
 const Trash = styled.div`
 display: flex;
+margin-top: 6%;
+position: absolute;
+width: 20px;
+right: 0;
 align-items: center;
 ion-icon{
-    margin-right: 2%;
+
     color: #0A193C;
 }
 `

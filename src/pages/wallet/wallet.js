@@ -24,11 +24,11 @@ import {
 
 export default function Wallet() {
     const navigate = useNavigate()
-    const [TransectionDone,setTransectionDone] = React.useState(0);
+    const [transectionDone,setTransectionDone] = React.useState(0);
     const [isLoading, setIsLoading] = React.useState(false);
-    const [registers , setRegisters] = React.useState([])
+    const [registers , setRegisters] = React.useState([]);
     const [enable, setEnable] = React.useState(false);
-    const [currentBalance , setCurrentBalance] = React.useState(0)
+    const [currentBalance , setCurrentBalance] = React.useState(0);
 
     const [variableEntry, setVariableEntry] = React.useState("");
     const [variableOutput, setVariableOutput] = React.useState("");
@@ -37,8 +37,10 @@ export default function Wallet() {
     const [description, setDescription] = React.useState("");
 
     const token = localStorage.getItem("token");
-    const profilePic = localStorage.getItem("profilePicture")
- 
+    const profilePic = localStorage.getItem("profilePicture");
+
+    let entry = Number(variableEntry) + Number(fixedEntry);
+    let outPut = Number(variableOutput) + Number(fixedOutput);
 
     async function getBalance(e) {
         try {
@@ -86,22 +88,21 @@ export default function Wallet() {
               }
             const config = { headers: { Authorization: `Bearer ${token}` } };
             api.post(`/wallet`, body, config);
-
-            setIsLoading(true)
+           
+          setIsLoading(true)
         } catch (error) {
             console.log(error)
             alert(error.response.data);
         } finally {
-            setTransectionDone(0)
             setIsLoading(false);
             setEnable(false);
         }
     }
-console.log(TransectionDone)
+console.log(isLoading)
     React.useEffect(() => {
         getBalance();
         getRegisters();
-      }, [TransectionDone,isLoading]);
+      }, [transectionDone]);
 
     return (
         <Conteiner>
@@ -123,7 +124,7 @@ console.log(TransectionDone)
                                 <ion-icon name="arrow-up-circle-outline"></ion-icon>
                             </IconsTransections>
                         </div>
-                        <Value>RS 450,00</Value>
+                        <Value>RS {entry.toFixed(2).replace(".", ",")}</Value>
                     </Card>
                     <Card>
                         <div>
@@ -132,7 +133,7 @@ console.log(TransectionDone)
                                 <ion-icon name="arrow-down-circle-outline"></ion-icon>
                             </IconsTransections>
                         </div>
-                        <Value>-RS 450,00</Value>
+                        <Value>-RS {outPut.toFixed(2).replace(".", ",")}</Value>
                     </Card>
                     <Card>
                         <div>
@@ -209,7 +210,20 @@ console.log(TransectionDone)
                 <div>
                     <ListTransections>
                         {registers.length > 0 ? (
-                            <h1>tem</h1>
+                          registers.map((e)=>{
+                              console.log(e)
+                              return(
+                                  <TransectionRegister 
+                                    value={e.balancevalue}
+                                    description={e.description}
+                                    fixedEntry={e.fixedEntry}
+                                    fixedOutput={e.fixedOutput}
+                                    variableEntry={e.variableOutput}
+                                    balancevalue={e.balancevalue}
+                                    key={e.id}
+                                  />
+                              )
+                          })
                         ) : (
                             <Information>
                                 <h1>Sem transações ainda</h1>
