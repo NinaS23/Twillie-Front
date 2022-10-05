@@ -91,7 +91,7 @@ const ModalStyle = styled.div`
   align-items: center;
   background-color: #ffffff;
   border-color:#2B6EF5;
-  border-radius: 50px;
+  border-radius: 40px;
   width: 597px;
   height: 262px;
   padding: 38px 120px 65px 120px;
