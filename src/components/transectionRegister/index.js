@@ -1,10 +1,8 @@
 import styled from "styled-components";
-export function TransectionRegister({value, description, fixedEntry, variableEntry, fixedOutput, variableOutput }) {
-  function willDeleteOrNot(){
-    window.confirm(
-        "Do you really want to delete this Crumb?"
-      )
-  }
+import DeleteIcon from "../deleteIcon/delete";
+
+export function TransectionRegister({value,cardId, description, fixedEntry, variableEntry, fixedOutput, variableOutput }) {
+ 
     return (
         <TransectionBlock>
             <Divisor>
@@ -17,8 +15,10 @@ export function TransectionRegister({value, description, fixedEntry, variableEnt
                 </Register>
                 <BalanceRegister>
                     <ValueRegister>RS  {value.toFixed(2).replace(".", ",")}</ValueRegister>
-                    <Trash onClick={() => willDeleteOrNot()}>
-                        <ion-icon name="trash-bin-outline"></ion-icon>
+                    <Trash>
+                      <DeleteIcon 
+                      cardId={cardId}
+                      />
                     </Trash>
                 </BalanceRegister>
             </Divisor>

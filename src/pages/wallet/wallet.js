@@ -220,6 +220,7 @@ console.log(isLoading)
                                     fixedOutput={e.fixedOutput}
                                     variableEntry={e.variableOutput}
                                     balancevalue={e.balancevalue}
+                                    cardId={e.id}
                                     key={e.id}
                                   />
                               )
