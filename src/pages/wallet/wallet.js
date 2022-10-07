@@ -89,7 +89,7 @@ export default function Wallet() {
               }
             const config = { headers: { Authorization: `Bearer ${token}` } };
             api.post(`/wallet`, body, config);
-           
+         
           setIsLoading(true)
         } catch (error) {
             alert(error.response.data);
@@ -107,7 +107,7 @@ console.log(isLoading)
     return (
         <Conteiner>
             <Header>
-                <div>
+                <div onClick={() => navigate("/main")}>
                     <img src={profilePic} alt="foto de perfil" />
                     <h2>wallet</h2>
                 </div>
