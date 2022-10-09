@@ -11,7 +11,7 @@ export function TransectionRegister({value,cardId, description, fixedEntry, vari
                     <h2>fixed entry: RS {fixedEntry.toFixed(2).replace(".", ",")}</h2>
                     <h2>fixed output: -RS {fixedOutput.toFixed(2).replace(".", ",")}</h2>
                     <h2>variable entry: RS {variableEntry.toFixed(2).replace(".", ",")}</h2>
-                    <h2>variable output: -RS {fixedOutput.toFixed(2).replace(".", ",")}</h2>
+                    <h2>variable output: -RS {variableOutput.toFixed(2).replace(".", ",")}</h2>
                 </Register>
                 <BalanceRegister>
                     <ValueRegister>RS  {value.toFixed(2).replace(".", ",")}</ValueRegister>
@@ -73,6 +73,10 @@ color: #0A193C;
 const BalanceRegister = styled.div`
   display: flex;
   width: 180px;
+  @media (max-width: 796px) {
+   margin-left: 10%;
+
+  }
   
 `
 

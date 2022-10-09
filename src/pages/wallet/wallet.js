@@ -218,7 +218,8 @@ console.log(isLoading)
                                     description={e.description}
                                     fixedEntry={e.fixedEntry}
                                     fixedOutput={e.fixedOutput}
-                                    variableEntry={e.variableOutput}
+                                    variableEntry={e.variableEntry}
+                                    variableOutput={e.variableOutput}
                                     balancevalue={e.balancevalue}
                                     cardId={e.id}
                                     key={e.id}
