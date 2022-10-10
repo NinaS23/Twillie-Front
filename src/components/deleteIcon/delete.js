@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { useState } from "react";
 import styled from "styled-components";
 import { ThreeDots } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom";
 
 Modal.setAppElement(".root");
 
@@ -10,7 +11,7 @@ function DeleteIcon({ cardId, render }) {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const token = localStorage.getItem("token");
-
+  const navigate = useNavigate()
   function modalDelete() {
     setIsOpen(!isOpen);
   }
@@ -25,6 +26,8 @@ function DeleteIcon({ cardId, render }) {
       };
 
       await api.delete(`wallet/${cardId}`, config);
+       
+      navigate("/main")
       setLoading(false);
       modalDelete();
     } catch (e) {

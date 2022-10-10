@@ -22,6 +22,7 @@ const Icon = styled.div`
 const Options = styled.div`
 background-color: #FFFFFF;
 width:60%;
+margin-top: 11%;
 @media (max-width: 912px) {
     width: 100%;
     height: 80vh;

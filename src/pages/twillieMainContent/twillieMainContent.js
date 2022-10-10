@@ -22,8 +22,6 @@ export default function TwillieMainContent() {
             <Content>
                 <Options>
                     <ButtonOptions onClick={() => navigate("/wallet")}><h3>Carteira</h3></ButtonOptions>
-                    <ButtonOptions><h3>investimento</h3></ButtonOptions>
-                    <ButtonOptions><h3>gráfico</h3></ButtonOptions>
                 </Options>
                 <ImageConteiner>
                     <img src={grafico} alt="people with graphic" />

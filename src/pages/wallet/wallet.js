@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import {  Icon } from "../twillieMainContent/style";
 import { api } from "../../services/apiService";
@@ -76,7 +75,6 @@ export default function Wallet() {
     }
 
     async function postTransection(e) {
-        console.log("entrei no post")
         try {
             setIsLoading(true);
             setEnable(true);
@@ -89,7 +87,7 @@ export default function Wallet() {
               }
             const config = { headers: { Authorization: `Bearer ${token}` } };
             api.post(`/wallet`, body, config);
-         
+          navigate("/main")
           setIsLoading(true)
         } catch (error) {
             alert(error.response.data);
@@ -238,4 +236,3 @@ console.log(isLoading)
 
     )
 }
-
