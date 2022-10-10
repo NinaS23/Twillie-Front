@@ -46,7 +46,7 @@ create .env file and put on it:
 ```git
 $ REACT_APP_API_BASE_URL= https://twillie-nina.herokuapp.com
 ```
-Finally, start the server:
+Finally, start the app:
 
 ```git
 npm start
